@@ -6,7 +6,7 @@ from Logger_Config.logger import logging
 class Request(BaseModel):
     input: str
 
-    @field_validator('input', mode='before') #In pydantic 1: pre=True
+    @field_validator('input', mode='before')  # In pydantic 1: pre=True
     def value_must_be_a_str(cls, v):
         if type(v) != str:
             error_msg = f"input '{v}' is not a valid string."

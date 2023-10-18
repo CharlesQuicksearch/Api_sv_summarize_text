@@ -18,7 +18,7 @@ def home():
 @app.post("/summarize/", response_model=Response)
 def summarize(request_data: Request):
     try:
-        logging.info("Summarize called. Trying to run AI procedure.")
+        logging.info("Summarize called. Run AI procedure.")
         result = summarize_text(request_data.input)
         logging.info(f"Returning result.")
         return Response(output=result)
